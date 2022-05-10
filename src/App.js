@@ -33,10 +33,10 @@ function App() {
     setTodos(newTodos)
   }
   function handleLengthTodos(){
-    if (todos.filter(todo => !todo.complete).length > 1) {
-      return 'things'
+    if (todos.filter(todo => !todo.complete).length === 1) {
+      return 'thing'
     }
-    return 'thing'
+    return 'things' 
   }
 
   return (
