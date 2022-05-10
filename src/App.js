@@ -32,6 +32,12 @@ function App() {
     const newTodos = todos.filter(todo => !todo.complete)
     setTodos(newTodos)
   }
+  function handleLengthTodos(){
+    if (todos.filter(todo => !todo.complete).length > 1) {
+      return 'things'
+    }
+    return 'thing'
+  }
 
   return (
     <section>
@@ -47,9 +53,10 @@ function App() {
           </button>
         </header>
         <div id='body'>
-
           <h2>
-              {todos.filter(todo => !todo.complete).length} things left to do
+              {todos.filter(todo => !todo.complete).length} {' '}
+              {handleLengthTodos()} {' '}
+              left to do
           </h2>
           <button id='clear' onClick={handleClearTodos}>
             clear deleted
